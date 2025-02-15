@@ -4,7 +4,7 @@ This repository contains two MQL4 scripts for exporting XAUUSD historical data t
 
 # How to Add and Use a Script in MetaTrader 4 (MT4)
 
-Open **MetaTrader 4 (MT4)** → Click **New Document** → Choose **Script** → Enter the **script name** → Click **Finish** → Paste the **code** → **Compile** the code → The script should appear in the **Navigator** panel → **Double-click** or **drag and drop** it onto the chart → Open **File** (top-left corner) → Open **Data Folder** → Go to **MQL4 > Files** → Place the **dataset** inside the **Files** folder to restore it.
+Open **MetaTrader 4 (MT4)** → Click **New Document** → Choose **Script** → Enter the **script name** → Click **Finish** → Paste the **code** → **Compile** the code → The script should appear in the **Navigator** panel → **Double-click** or **drag and drop** it onto the chart → Open **File** (top-left corner) → Open **Data Folder** → Go to **MQL4 > Files** → The dataset will be restore here
 
 ## Scripts
 

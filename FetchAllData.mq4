@@ -1,15 +1,16 @@
 //+------------------------------------------------------------------+
 //|                                      ExportXAUUSDMultiTF_AllData.mq4 |
 //|  This script exports XAUUSD data from January 1, 2004 onward for   |
-//|  eight different timeframes:                                     |
-//|    - XAU_15m_data.csv   => 15-minute (M15)                         |
-//|    - XAU_1Month_data.csv=> 1-month (MN1)                            |
-//|    - XAU_1d_data.csv    => Daily (D1)                               |
-//|    - XAU_1h_data.csv    => Hourly (H1)                              |
-//|    - XAU_1w_data.csv    => Weekly (W1)                              |
-//|    - XAU_30m_data.csv   => 30-minute (M30)                          |
-//|    - XAU_4h_data.csv    => 4-hour (H4)                              |
-//|    - XAU_5m_data.csv    => 5-minute (M5)                            |
+//|  nine different timeframes:                                        |
+//|    - XAU_1m_data.csv    => 1-minute                               |
+//|    - XAU_15m_data.csv   => 15-minute                              |
+//|    - XAU_1Month_data.csv=> 1-month                                |
+//|    - XAU_1d_data.csv    => Daily                                  |
+//|    - XAU_1h_data.csv    => Hourly                                 |
+//|    - XAU_1w_data.csv    => Weekly                                 |
+//|    - XAU_30m_data.csv   => 30-minute                              |
+//|    - XAU_4h_data.csv    => 4-hour                                 |
+//|    - XAU_5m_data.csv    => 5-minute                               |
 //+------------------------------------------------------------------+
 #property strict
 #property script_show_inputs
@@ -73,8 +74,9 @@ void OnStart()
    string symbol = "XAUUSD";
    datetime startTime = StrToTime("2004.01.01 00:00");
    
-   // Define file names for each timeframe
-   string fileNames[8] = {
+   // Define file names for each timeframe (now including 1-minute)
+   string fileNames[9] = {
+      "XAU_1m_data.csv",     // 1-minute
       "XAU_15m_data.csv",    // 15-minute
       "XAU_1Month_data.csv", // 1-month
       "XAU_1d_data.csv",     // Daily
@@ -86,19 +88,20 @@ void OnStart()
    };
    
    // Define the corresponding timeframes
-   int timeframes[8] = {
-      PERIOD_M15,   // 15-minute
-      PERIOD_MN1,   // 1-month
-      PERIOD_D1,    // Daily
-      PERIOD_H1,    // Hourly
-      PERIOD_W1,    // Weekly
-      PERIOD_M30,   // 30-minute
-      PERIOD_H4,    // 4-hour
-      PERIOD_M5     // 5-minute
+   int timeframes[9] = {
+      PERIOD_M1,   // 1-minute
+      PERIOD_M15,  // 15-minute
+      PERIOD_MN1,  // 1-month
+      PERIOD_D1,   // Daily
+      PERIOD_H1,   // Hourly
+      PERIOD_W1,   // Weekly
+      PERIOD_M30,  // 30-minute
+      PERIOD_H4,   // 4-hour
+      PERIOD_M5    // 5-minute
    };
    
    // Loop through each timeframe and export its data from 2004 onward
-   for (int i = 0; i < 8; i++)
+   for (int i = 0; i < 9; i++)
    {
       ExportData(symbol, timeframes[i], fileNames[i], startTime);
    }
